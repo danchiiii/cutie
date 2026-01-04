@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Confession Letter 💗</title>
+  <title>Ferrizz 💗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -29,7 +29,7 @@
       border-radius: 14px;
     }
 
-    /* ✉️ ENVELOPE */
+    
     .envelope {
       position: relative;
       width: 320px;
@@ -48,20 +48,7 @@
       z-index: 3;
     }
 
-    /* 🔧 REDUCED TOP FLAP */
-    .top {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 140px solid transparent;
-      border-right: 140px solid transparent;
-      border-bottom: 85px solid #ff4f7a;
-      top: -6px;
-      transform-origin: top;
-      transition: transform 0.6s ease;
-      z-index: 4;
-    }
-
+    
     .letter {
       position: absolute;
       width: 260px;
@@ -78,15 +65,13 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
 
-    .envelope.open .top {
-      transform: rotateX(180deg) translateY(-10px);
-    }
+    
 
     .envelope.open .letter {
       transform: translateY(-90px);
     }
 
-    /* 📱 PHONE FIX */
+    
     @media (max-width: 480px) {
       .envelope {
         width: 260px;
@@ -100,11 +85,7 @@
         border-bottom: 90px solid #ff6f91;
       }
 
-      .top {
-        border-left: 115px solid transparent;
-        border-right: 115px solid transparent;
-        border-bottom: 70px solid #ff4f7a;
-        top: -5px;
+      
       }
 
       .letter {
@@ -115,7 +96,7 @@
       }
     }
 
-    /* 🔘 BUTTONS */
+    
     .buttons {
       margin-top: 22px;
     }
@@ -147,7 +128,7 @@
 
 <body>
 
-  <!-- 🎵 MUSIC -->
+  
   <audio id="bgm">
     <source src="rizz.mp3" type="audio/mpeg">
   </audio>
