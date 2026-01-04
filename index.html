@@ -30,12 +30,15 @@
 
     /* ENVELOPE */
     .envelope {
+      position: relative;
       background: #ffffff;
       border: 2px solid #ff5d8f;
       border-radius: 20px;
       padding: 28px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.25);
       text-align: center;
+      cursor: pointer;
+      overflow: hidden;
       transition: transform 0.2s;
     }
 
@@ -43,31 +46,37 @@
       transform: scale(0.97);
     }
 
+    /* FLAP ANIMATION */
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: #ff5d8f;
+      border-bottom: 2px solid #ff5d8f;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      transform-origin: top;
+      transition: transform 0.6s ease;
+      z-index: 2;
+    }
+
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+    }
+
     .letter p {
       color: #333;
       font-size: 17px;
       line-height: 1.7;
       margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
     }
 
     button {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 12px;
-      background: #ff5d8f;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-    }
-
-    button:hover {
-      background: #ff3f78;
-    }
-
-    button:active {
-      transform: scale(0.97);
+      display: none; /* removed because tap is on envelope now */
     }
 
     audio {
@@ -78,11 +87,6 @@
       .letter p {
         font-size: 16px;
       }
-
-      button {
-        font-size: 15px;
-        padding: 13px;
-      }
     }
   </style>
 </head>
@@ -93,7 +97,8 @@
   </audio>
 
   <div class="container">
-    <div class="envelope">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
       <div class="letter">
         <p>
           Are you made of copper and tellurium?<br>
@@ -102,225 +107,17 @@
           – Danchi 🦭
         </p>
       </div>
-
-      <button onclick="playMusic()">💗 Tap to play music</button>
     </div>
   </div>
 
   <script>
-    function playMusic() {
-      const music = document.getElementById("bgm");
-      music.play();
-    }
-  </script>
+    const envelope = document.getElementById("envelope");
+    const music = document.getElementById("bgm");
 
-</body>
-</html>      padding: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .envelope:active {
-      transform: scale(0.97);
-    }
-
-    .letter p {
-      color: #333;
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 22px;
-    }
-
-    button {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 12px;
-      background: #ff5d8f;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-    }
-
-    button:hover {
-      background: #ff3f78;
-    }
-
-    button:active {
-      transform: scale(0.97);
-    }
-
-    audio {
-      display: none;
-    }
-
-    @media (max-width: 380px) {
-      .letter p {
-        font-size: 16px;
-      }
-
-      button {
-        font-size: 15px;
-        padding: 13px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <audio id="bgm">
-    <source src="rizz.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="container">
-    <div class="envelope">
-      <div class="letter">
-        <p>
-          Are you made of copper and tellurium?<br>
-          Because you're cute 🐣  
-          <br><br>
-          – Danchi 🦭
-        </p>
-      </div>
-
-      <button onclick="playMusic()">💗 Tap to play music</button>
-    </div>
-  </div>
-
-  <script>
-    function playMusic() {
-      const music = document.getElementById("bgm");
-      music.play();
-    }
-  </script>
-
-</body>
-</html>    .envelope {
-      background: rgba(255, 255, 255, 0.95);
-      border: 2px solid #ff5d8f;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .envelope:active {
-      transform: scale(0.97);
-    }
-
-    .letter p {
-      color: #333;
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 22px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    }
-
-    button {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 12px;
-      background: #ff5d8f;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-    }
-
-    button:hover {
-      background: #ff3f78;
-    }
-
-    button:active {
-      transform: scale(0.97);
-    }
-
-    audio {
-      display: none;
-    }
-
-    @media (max-width: 380px) {
-      .letter p {
-        font-size: 16px;
-      }
-
-      button {
-        font-size: 15px;
-        padding: 13px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <audio id="bgm">
-    <source src="rizz.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="container">
-    <div class="envelope">
-      <div class="letter">
-        <p>
-          Are you made of copper and tellurium?<br>
-          Because you're cute 🐣  
-          <br><br>
-          – Danchi 🦭
-        </p>
-      </div>
-
-      <button onclick="playMusic()">💗 Tap to play music</button>
-    </div>
-  </div>
-
-  <script>
-    function playMusic() {
-      const music = document.getElementById("bgm");
-      music.play();
-    }
-  </script>
-
-</body>
-</html>    }
-
-    button:hover {
-      background: #ff3f78;
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
-</head>
-
-<body>
-
-  <audio id="bgm">
-    <source src="rizz.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="container">
-    <div class="envelope">
-      <div class="letter">
-        <p>
-          are you made of copper and tellurium?<br>
-          because you're cute 🐣  
-          <br><br>
-          – danchi 🦭
-        </p>
-      </div>
-
-      <button onclick="open()">💗 Tap to play music</button>
-    </div>
-  </div>
-
-  <script>
-    function open() {
-      document.getElementById("bgm").play();
-    }
+    envelope.addEventListener("click", () => {
+      envelope.classList.add("open"); // open the flap
+      music.play(); // play the music
+    });
   </script>
 
 </body>
