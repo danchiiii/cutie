@@ -2,145 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ferizz</title>
+  <title>Ferrizz 💗</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
     body {
-      height: 100vh;
       margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 100vh;
+      background-image: url("rizz.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
       text-align: center;
-      backdrop-filter: blur(4px);
-      padding: 20px;
-      border-radius: 12px;
     }
 
     .envelope {
-      position: relative;
-      width: 400px;
-      height: 260px;
-      margin: auto;
-    }
-
-    .front {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 200px solid #ff9ab3;
-      border-right: 200px solid #ff9ab3;
-      border-top: 130px solid transparent;
-      border-bottom: 130px solid #ff6f91;
-      z-index: 3;
-    }
-
-    .top {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 200px solid transparent;
-      border-right: 200px solid transparent;
-      border-bottom: 130px solid #ff4f7a;
-      top: 0;
-      transform-origin: top;
-      transition: transform 0.6s ease;
-      z-index: 4;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     .letter {
-      position: absolute;
-      width: 340px;
-      height: 200px;
-      background: white;
-      top: 30px;
-      left: 30px;
-      padding: 20px;
-      box-sizing: border-box;
-      transition: transform 0.6s ease;
-      z-index: 2;
+      color: #333;
       font-size: 16px;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .envelope.open .top {
-      transform: rotateX(180deg);
-    }
-
-    .envelope.open .letter {
-      transform: translateY(-120px);
-    }
-
-    .buttons {
-      margin-top: 25px;
+      margin-bottom: 20px;
     }
 
     button {
       padding: 10px 22px;
-      margin: 0 8px;
       border: none;
       background: #ff5d8f;
       color: white;
-      cursor: pointer;
-      border-radius: 6px;
       font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
     }
 
     button:hover {
       background: #ff3f78;
     }
+
+    audio {
+      display: none;
+    }
   </style>
 </head>
 
-<body background="rizz.jpg">
+<body>
 
-  
   <audio id="bgm">
-      <source src="rizz.mp3" type="audio/mpeg">
+    <source src="rizz.mp3" type="audio/mpeg">
   </audio>
 
   <div class="container">
     <div class="envelope">
       <div class="letter">
         <p>
-          are you made of copper and tellurium? because you're cute 😼<br>
-          - danchi 🦕
+          are you made of copper and tellurium?  
+          because you're cute 🐣  
+          <br><br>
+          – danchi 🦭
         </p>
       </div>
 
-      <div class="front"></div>
-      <div class="top"></div>
-    </div>
-
-    <div class="buttons">
-      <button id="open">OPEN</button>
-      <button id="close">CLOSE</button>
+      <button onclick="playMusic()">💗 Play music</button>
     </div>
   </div>
 
   <script>
-    const envelope = document.querySelector('.envelope');
-    const openBtn = document.getElementById('open');
-    const closeBtn = document.getElementById('close');
-    const bgm = document.getElementById('bgm');
-
-    openBtn.addEventListener('click', () => {
-      envelope.classList.add('open');
-      bgm.play();
-    });
-
-    closeBtn.addEventListener('click', () => {
-      envelope.classList.remove('open');
-      bgm.pause();
-    });
+    function playMusic() {
+      document.getElementById("bgm").play();
+    }
   </script>
 
 </body>
