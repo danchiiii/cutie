@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Confession Letter 💗</title>
-
-  <!-- IMPORTANT for phones -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -14,6 +12,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 16px;
 
       background-image: url("rizz.jpg");
       background-size: cover;
@@ -21,7 +20,6 @@
       background-repeat: no-repeat;
 
       font-family: Arial, sans-serif;
-      padding: 16px;
     }
 
     .container {
@@ -50,14 +48,15 @@
       z-index: 3;
     }
 
+    /* 🔧 REDUCED TOP FLAP */
     .top {
       position: absolute;
       width: 0;
       height: 0;
-      border-left: 160px solid transparent;
-      border-right: 160px solid transparent;
-      border-bottom: 105px solid #ff4f7a;
-      top: 0;
+      border-left: 140px solid transparent;
+      border-right: 140px solid transparent;
+      border-bottom: 85px solid #ff4f7a;
+      top: -6px;
       transform-origin: top;
       transition: transform 0.6s ease;
       z-index: 4;
@@ -68,7 +67,7 @@
       width: 260px;
       height: 160px;
       background: white;
-      top: 25px;
+      top: 30px;
       left: 30px;
       padding: 14px;
       box-sizing: border-box;
@@ -80,7 +79,7 @@
     }
 
     .envelope.open .top {
-      transform: rotateX(180deg);
+      transform: rotateX(180deg) translateY(-10px);
     }
 
     .envelope.open .letter {
@@ -102,9 +101,10 @@
       }
 
       .top {
-        border-left: 130px solid transparent;
-        border-right: 130px solid transparent;
-        border-bottom: 90px solid #ff4f7a;
+        border-left: 115px solid transparent;
+        border-right: 115px solid transparent;
+        border-bottom: 70px solid #ff4f7a;
+        top: -5px;
       }
 
       .letter {
