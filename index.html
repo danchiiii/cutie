@@ -15,15 +15,11 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background-image: url("rizz.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 16px;
+      background-color: #ffeef2; /* soft pastel pink */
     }
 
     .container {
@@ -35,6 +31,92 @@
 
     /* ENVELOPE */
     .envelope {
+      background: #ffffff;
+      border: 2px solid #ff5d8f;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .envelope:active {
+      transform: scale(0.97);
+    }
+
+    .letter p {
+      color: #333;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #ff5d8f;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    button:hover {
+      background: #ff3f78;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media (max-width: 380px) {
+      .letter p {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 15px;
+        padding: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bgm">
+    <source src="rizz.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div class="envelope">
+      <div class="letter">
+        <p>
+          Are you made of copper and tellurium?<br>
+          Because you're cute 🐣  
+          <br><br>
+          – Danchi 🦭
+        </p>
+      </div>
+
+      <button onclick="playMusic()">💗 Tap to play music</button>
+    </div>
+  </div>
+
+  <script>
+    function playMusic() {
+      const music = document.getElementById("bgm");
+      music.play();
+    }
+  </script>
+
+</body>
+</html>    .envelope {
       background: rgba(255, 255, 255, 0.95);
       border: 2px solid #ff5d8f;
       border-radius: 20px;
